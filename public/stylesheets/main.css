@@ -1,0 +1,57 @@
+h4{
+	color:rgb(205, 23, 70)
+}
+
+#showCamp{
+	margin: 20px auto;
+}
+
+#commentBox{
+	background-color:rgb(241,241,241);
+	margin:20px auto;
+}
+
+.but{
+	margin:9px 9px 9px auto
+}
+
+.delete{
+	display:inline
+}
+
+#campImage{
+	width: 100%;
+    height: 13.5vw;
+    object-fit: cover;
+}
+
+#campCards{
+	border:1px solid rgba(128,128,128,0.5);
+}
+
+#details{
+	margin-bottom:10px;
+}
+
+#map {
+	height:500px;
+}
+
+.marker {
+  background-image: url('./images/marker.png');
+  background-size: contain;
+  background-repeat:no-repeat;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
