@@ -6,13 +6,21 @@ h4{
 	margin: 20px auto;
 }
 
-#commentBox{
-	background-color:rgb(241,241,241);
-	margin:20px auto;
+#showCamp p{
+  margin-bottom: 10px;
 }
 
-.but{
-	margin:9px 9px 9px auto
+#commentBox{
+	background-color:rgb(241,241,241);
+  margin:20px auto;
+  padding: 20px;
+}
+
+.hrStyle {
+  border: 0;
+  margin: 20px;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
 .delete{
@@ -34,7 +42,8 @@ h4{
 }
 
 #map {
-	height:500px;
+  height:500px;
+  margin:20px 0;
 }
 
 .marker {
@@ -55,3 +64,16 @@ h4{
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+.formBox{
+  margin:25px auto;
+  width:40%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .formBox{
+    width:400px;
+  }
+}
+
+
