@@ -1,0 +1,29 @@
+<div>
+    <nav>
+        <ul class="pagination justify-content-center">
+            <% if(campgrounds.page -1 ){ %>
+                <li class="page-item">
+                    <a class="page-link rounded-circle m-1" href="/campgrounds?page=<%= campgrounds.page -1  %>" tabindex="-1" title="Previous"><i class="fas fa-chevron-left text-primary"></i></a>
+                </li>
+            <% } %>
+            <% for(let i=1;i<=allCampsArray.length;i++){ %>
+                <li class="page-item">
+                   <% if(allCampsArray[i-1]!=="..."){ %>
+                        <a class="page-link rounded-circle m-1" id="pages" 
+                        href="/campgrounds?page=<%= allCampsArray[i-1] %>" 
+                        <% if(allCampsArray[i-1]===campgrounds.page){ %>
+                            style="background-color:#3498DB;color: white"
+                        <% } %>><%= allCampsArray[i-1] %></a>
+                   <% }else{ %>
+                        ...
+                    <% } %>
+                </li> 
+            <% } %>
+            <% if((campgrounds.page +1 )<= campgrounds.pages){ %>
+                <li class="page-item">
+                    <a class="page-link rounded-circle m-1" href="/campgrounds?page=<%= campgrounds.page +1  %>" title="Next"><i class="fas fa-chevron-right text-primary"></i></a>
+                </li>
+            <% } %>
+        </ul>
+    </nav>
+</div>
