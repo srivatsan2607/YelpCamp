@@ -1,3 +1,5 @@
+const middlewares = require("../middleware");
+
 var express = require("express"),
 	router = express.Router({ mergeParams: true }),
 	Campground = require("../models/campgroundModel"),
@@ -10,12 +12,14 @@ const geocodingClient = mbxGeocoding({ accessToken: process.env.MAPBOX_TOKEN });
 
 //Index route
 router.get("/", function (req, res) {
-	Campground.find({}, function (err, allCampgrounds) {
+	Campground.paginate({}, { page: req.query.page || 1, limit: 12 }, function (err, allCampgrounds) {
 		if (err) {
 			req.flash("error", err.message)
 		}
 		else {
-			res.render("campgrounds/index", { campgrounds: allCampgrounds });
+			allCampgrounds.page = Number(allCampgrounds.page);
+			var allCampsArray = middlewares.pagination(allCampgrounds.page, allCampgrounds.pages);
+			res.render("campgrounds/index", { campgrounds: allCampgrounds, allCampsArray: allCampsArray });
 		}
 	})
 })

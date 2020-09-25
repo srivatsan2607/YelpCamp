@@ -2,6 +2,11 @@ h4{
 	color:rgb(205, 23, 70)
 }
 
+#pages:hover{
+  background-color:#3498DB ;
+  color: white;
+}
+
 #showCamp{
 	margin: 20px auto;
 }

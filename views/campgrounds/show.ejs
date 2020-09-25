@@ -19,7 +19,7 @@
 					<p class="card-text"><%= campground.description %></p>
 					<p style="display: inline;">
 						<em>Submitted by
-							<%= campground.author.username %>,<%= moment(campground.createdAt).fromNow() %></em>
+							<%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></em>
 					</p>
 					<div class="float-right">
 						<%if(currentUser && campground.author.id.equals(currentUser._id)){ %>
@@ -82,12 +82,11 @@
 	// create a HTML element for our location feature
 	var el = document.createElement('div');
 	el.className = 'marker';
-	console.log(campground.coordinates);
 	// make a marker for location feature and add to the map
 	new mapboxgl.Marker(el)
 		.setLngLat(campground.coordinates)
 		.setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-			.setHTML('<h3>' + campground.name + '</h3><p>' + campground.location + '</p>'))
+			.setHTML('<h6>' + campground.name + '</h6><p>' + campground.location + '</p>'))
 		.addTo(map);
 </script>
 

@@ -1,33 +1,32 @@
 <%- include("../partials/header") %>
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 <div class="container">
 	<header class="jumbotron">
-	<h1>
-		Welcome to YelpCamp!
-	</h1>
-	<p>
-		View our handpicked cAmpgrounds from all over the world	
-	</p>
-	<p>
-		<a class="btn btn-success btn-lg" href="/campgrounds/new">Add new CAmpground</a>
-	</p>
+		<h1>
+			Welcome to YelpCamp!
+		</h1>
+		<p>
+			View our handpicked cAmpgrounds from all over the world
+		</p>
+		<p>
+			<a class="btn btn-success btn-lg" href="/campgrounds/new">Add new CAmpground</a>
+		</p>
 	</header>
-
-
+	<%- include("../partials/pagination") %>
 	<div class="row text-center pb-3">
-		<% campgrounds.forEach(function(campground){  %>
-		<div class="col-md-3 col-sm-6">
-			<div class="card" id="campCards">
-				<img id="campImage" src="<%= campground.image %>" class="card-img-top img-fluid " alt="campground">
-				<div class="card-body">
-					<h6 class="card-title"><a href=""><%= campground.name %></a></h6>
-					<a href="/campgrounds/<%= campground._id %>" class="btn btn-sm btn-primary">More Info</a>
+		<% campgrounds.docs.forEach(function(campground){  %>
+			<div class="col-md-3 col-sm-6 mb-2">
+				<div class="card" id="campCards">
+					<img id="campImage" src="<%= campground.image %>" class="card-img-top img-fluid " alt="campground">
+					<div class="card-body">
+						<h6 class="card-title"><a href=""><%= campground.name %></a></h6>
+						<a href="/campgrounds/<%= campground._id %>" class="btn btn-sm btn-primary">More Info</a>
+					</div>
 				</div>
 			</div>
-		</div>
 		<% }) %>
-	</div>
-
+	</div>	
+	<%- include("../partials/pagination") %>	
 </div>
-
+			
 <%- include("../partials/footer") %>
