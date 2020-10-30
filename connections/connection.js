@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-module.exports = mongoose.connect(process.env.DB_KEY, {
+module.exports = mongoose.connect(process.env.DB_KEY_ATLAS, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false

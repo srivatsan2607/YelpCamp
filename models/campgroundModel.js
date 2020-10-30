@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var Comment = require("./commentModel");
 const mongoosePaginate = require("mongoose-paginate");
+
 //Schema Setup
 var CampgroundSchema = new Schema({
 	name: String,
